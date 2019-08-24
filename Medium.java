@@ -450,6 +450,7 @@ public class Medium
             else if(!one&&!two&&countTwo%2!=0)
                 two=true;
         }
+        System.out.println("To play, enter row letter followed by column number, without spaces.");
         fill();
         youPlay();
     }
