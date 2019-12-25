@@ -44,19 +44,19 @@ public class Advanced
     }
 
     public static void printScores()throws Exception{
-        System.out.println("\t\t\t Computer: "+comp);
-        System.out.println("\t\t\t U(ser):   "+yooz);
+        System.out.println("\nComputer: "+comp);
+        System.out.println("User:     "+yooz+"\n");
     }
 
     public static void again()throws Exception{
-        System.out.println("Would you like to lose again?\n1 for yes and 2 for no:");
+        System.out.println("Would you like to play again?\n1 for yes and 2 for no:");
         int h=yo.nextInt();
         if(h==1){
             countTwo++;
-            main();
+            main(new String[]{"a"});
         }
         else{
-            System.out.println("Thanks for playing Ereeez Game!");
+            System.out.println("Thank you for playing Erry's Game!");
             System.exit(0);
         }
     }
@@ -64,10 +64,21 @@ public class Advanced
     public static void printBoard()throws Exception{
         a=0;
         b=0;
+        System.out.print("|"+board[a][b]+"|");
+        b++;
+        while(b<4){
+          System.out.print("|"+board[a][b]+" |");
+          b++;
+        }
+        a++;
+        System.out.println();
         while (a<4){
             b=0;
             while (b<4){
-                System.out.print("|"+board[a][b]+"|");
+                if(b==0)
+                  System.out.print("|"+board[a][b]+" |");
+                else
+                  System.out.print("|"+board[a][b]+"|");
                 b++;
             }
             System.out.println();
@@ -85,7 +96,7 @@ public class Advanced
             if(play){
                 printBoard();
                 System.out.println("Your Turn!");
-                String turn=yo.nextLine();
+                String turn=yo.next();
                 char p1temp=turn.charAt(0);
                 if(p1temp=='A'||p1temp=='a')
                     p1=1;
@@ -489,7 +500,7 @@ public class Advanced
         }
     }
 
-    public static void main()throws Exception{
+    public static void main(String []args)throws Exception{
         if(countTwo>0){
             if(one&&two){
                 one=true;
@@ -497,7 +508,7 @@ public class Advanced
             else if(!one&&!two&&countTwo%2!=0)
                 two=true;
         }
-        System.out.println("To play, enter row letter followed by column number without spaces.");
+        System.out.println("To play, enter column letter followed by row number without spaces.");
         fill();
         youPlay();
     }
