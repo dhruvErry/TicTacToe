@@ -1,4 +1,4 @@
 # Tic Tac Toe
-### An unbeatable artificial intelligence system with plays Tic Tac Toe with users.
+### An unbeatable Java algorithm which plays the classic game Tic Tac Toe with users.
 
-To play, choose desired mode and enter letter of row followed by number of column.
+To play, choose desired mode and enter letter of column followed by number of row.
